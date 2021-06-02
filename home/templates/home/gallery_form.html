@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+{% block head %}
+  <title> Mt. Carmel  | Gallery | Admin  </title>
+{% endblock %}
+{% block body %}
+
+<style>
+p    {font-size: larger;}
+</style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="{% url 'home:index' %}"> Kiddos </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <!-- <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p> -->
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="{% url 'home:index' %}" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="{% url 'home:about' %}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Admissions </a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Academics </a></li>
+	        	<li class="nav-item active"><a href="{% url 'home:gallery' %}" class="nav-link"> Gallery </a></li>
+	          <li class="nav-item"><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+
+      <section class="probootstrap-section probootstrap-section-sm"   style="padding:4em 0">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row probootstrap-gutter0">
+                <div class="col-md-8  probootstrap-animate" id="probootstrap-content">
+                  <h2 style="margin: 0;" > Image Gallery - Add Image  </h2>
+                  Add image to any gallery section using the form below.
+                  <form action="#" method="post" class="probootstrap-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name"> Image Name </label>
+                       <input type="text" class="form-control" id="name" name="name" >
+                    </div>
+                    <div class="form-group">
+                      <label for="description"> Section (Choose a section ) </label>
+                      {{ form.category }}
+                    </div>
+
+                    <div class="form-group">
+                      <label for="subject"> Upload Image </label>
+                      <input type="file" class="required form-control" name="image">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="Add Image to Image Gallery ">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

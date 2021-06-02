@@ -1,0 +1,127 @@
+{% extends 'index.html' %}
+{% block title %}
+    Mt. Carmel | Facilities
+{% endblock %}
+
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="index.html">Kiddos</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <!-- <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p> -->
+	       <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item  active"><a href="{% url 'home:index' %}" class="nav-link pl-0">Home</a></li>
+	        	<li class="dropdown nav-item" >
+	        	     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >    About   </a>
+	        	  <ul class="dropdown-menu">
+                  <li class="nav-item"><a href="{% url 'home:about' %}"> About Us </a></li>
+                  <li class="nav-item"><a href="#" >    Principal's Desk </a></li>
+                  <li class="nav-item"><a href="#" >    Faculty          </a></li>
+                  <li class="nav-item"><a href="{% url 'home:facility' %}" >    Facilities       </a></li>
+                  </ul>
+                </li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Admissions </a></li>
+
+	        	<li class="dropdown nav-item" >
+	        	     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >   Academics  </a>
+	        	  <ul class="dropdown-menu">
+                  <li class="nav-item"><a href="{% url 'home:about' %}"> Scholastic </a></li>
+                  <li class="nav-item"><a href="#" >    Non Scholastic </a></li>
+                  <li class="nav-item"><a href="{% url 'home:article-all' %}" >    Articles          </a></li>
+                  <li class="nav-item"><a href="#" >    News       </a></li>
+                  </ul>
+                </li>
+	        	<li class="nav-item"><a href="{% url 'home:gallery' %}" class="nav-link"> Gallery </a></li>
+	          <li class="nav-item"><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg_2.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Our Facilities</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home:index' %}">Home
+            <i class="ion-ios-arrow-forward"></i></a></span> <span> Facilities <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="img" style="background-image: url(/static/images/course-1.jpg);"></div>
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#">  BEYOND CLASSROOM </a></h3>
+							<p>It is well known fact that children learn better when they practically experience the book imparted knowledge.This is done through multimedia such as smart class, power point slides and outdoor tutorials.
+                                The practical and intellectual skills are shaped through carefully chosen activities of classroom and beyond.It is believed that learning musical instruments increases the multitasking ability of our brain, hence we pay utmost attention in our child’s music lessons.
+                            </p>
+						</div>
+					</div>
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#"> TRANSPORT  </a></h3>
+							<p> We understand the concern of every parents when it comes to time, transport and safety. For the same reason, we have a secure and trusted transport facility. Safety of our children is our top priority. </p>
+						</div>
+						<div class="img" style="background-image: url(/static/images/course-2.jpg);"></div>
+
+					</div>
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="img" style="background-image: url(/static/images/course-3.jpg);"></div>
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#"> COMPUTER LAB </a></h3>
+							<p> We keep our children updated on keys of technology. The knowledge of computer helps us to navigate the rapidly changing technology driven world. Beginning right from 1st  standard, we make sure every child is well equipped with the skills on computer. </p>
+						</div>
+					</div>
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#"> SPORTS </a></h3>
+							<p> Along with academic gains, physical health plays an important role in mental development. At our institution children get to choose from wide range of options among both indoor and outdoor games. </p>
+						</div>
+						<div class="img" style="background-image: url(/static/images/course-4.jpg);"></div>
+					</div>
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="img" style="background-image: url(/static/images/course-5.jpg);"></div>
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#"> Swimming Classes </a></h3>
+							<p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+						</div>
+					</div>
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#"> Sandpits for Kids </a></h3>
+							<p> ????? <br> Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+						</div>
+						<div class="img" style="background-image: url(/static/images/course-6.jpg);"></div>
+					</div>
+					<div class="col-md-12 course d-lg-flex ftco-animate">
+						<div class="img" style="background-image: url(/static/images/course-6.jpg);"></div>
+						<div class="text bg-light p-4" style="color: rgba(0,0,0,0.8);">
+							<h3><a href="#"> 	LIBRARY  </a></h3>
+							<p> ‘Knowledge is power’, and to open the doorway to the grand halls of language and learning, we provide our children with a fully packed library. Here, the children get to develop their reading skills and knowledge of English language. </p>
+						</div>
+					</div>
+
+
+
+
+
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+{% endblock %}

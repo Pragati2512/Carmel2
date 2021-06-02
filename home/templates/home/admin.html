@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block head %}
+    <title> Mt. Carmel | Admin  </title>
+{% endblock %}
+
+{% block body %}
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="{% url 'home:index' %}">  Mount Carmel Convent School  </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="{% url 'home:index' %}" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="{% url 'home:about' %}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Admissions </a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Academics </a></li>
+	        	<li class="nav-item"><a href="{% url 'home:gallery' %}" class="nav-link"> Gallery </a></li>
+	          <li class="nav-item"><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+		<section class="ftco-section ftco-no-pt ftc-no-pb" style="padding:2em 0">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 order-md-last wrap-about py-5 wrap-about bg-light">
+						<div class="text px-4 ftco-animate">
+	          	<h2 class="mb-4"> Welcome to Mount Carmel Convent School</h2>
+							<p>
+
+ 				                1. <a href="{% url 'home:article-add' %}">    Add Article     </a> <br>
+                                2. <a href="{% url 'home:article-list' %}">   Delete Article/Article List  </a> <br>
+                                <br>
+                                3.  <a href="{% url 'home:gal-sec-add' %}">   Add Gallery Section    </a> <br>
+                                4.  <a href="{% url 'home:gal-add' %}">   Add Images to a Gallery Section   </a> <br>
+                                5.  <a href="{% url 'home:gal-list' %}">  Delete Image/Gallery Section  </a> <br>
+                                <br>
+                                6.  <a href="{% url 'home:news-add'  %}">  Add News  </a> <br>
+                                7.  <a href="{% url 'home:news-list' %}">  Delete News / News List  </a> <br>
+                                <br>
+
+
+							</p>
+
+							<!--p><a href="#" class="btn btn-secondary px-4 py-3">Read More</a></p -->
+						</div>
+					</div>
+</div>
+</div>
+</section>
+
+
+{% endblock %}

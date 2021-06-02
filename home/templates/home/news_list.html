@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <title> Mt. Carmel | News  </title>
+{% endblock %}
+
+{% block body %}
+
+<style>
+p    {font-size: larger;}
+</style>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="{% url 'home:index' %}"> Mount Carmel Convent School </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <!-- <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p> -->
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="{% url 'home:index' %}" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="{% url 'home:about' %}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Admissions </a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Academics </a></li>
+	        	<li class="nav-item"><a href="{% url 'home:gallery' %}" class="nav-link"> Gallery </a></li>
+	          <li class="nav-item"><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+
+<section class="probootstrap-section" style="padding:2em 0;">
+        <div class="container">
+		<h2> News List </h2>
+        <p>   You may delete the news that no longer have to be present on the Website Homepage.
+        </p>
+                <table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th> Sr. No. </th>
+						      <th> Name   </th>
+						      <th> &nbsp;  </th>
+						      <th> &nbsp;  </th>
+
+						    </tr>
+						  </thead>
+						  <tbody>
+						    {% for item in items %}
+						    <tr class="alert" role="alert">
+						        <td> {{ forloop.counter }} </td>
+						      <td> 	<div class="email">
+						      		     {{ item.title }} <br>
+						      		     {{ item.dated_on }}
+						      	    </div>
+						      </td>
+						      <td>  <!--div class="img" style="background-image: url();"></div> 	</td-->
+						          <img src="{{ item.news_image.url }}" height="90px" > </img>
+						      </td>
+						      <td>
+				            	<a href="{% url 'home:news-del'  item.pk %}">
+				            	  Delete
+				          	    <a>
+				        	  </td>
+						    </tr>
+                            {% endfor %}
+						  </tbody>
+						</table>
+   </div>
+</section>
+
+
+{% endblock %}
+

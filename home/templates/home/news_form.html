@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+
+{% block head %}
+  <title> Mt. Carmel | News | Admin  </title>
+{% endblock %}
+{% block body %}
+
+<style>
+p    {font-size: larger;}
+</style>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="{% url 'home:index' %}"> Mount Carmel Convent School </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <!-- <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p> -->
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="{% url 'home:index' %}" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="{% url 'home:about' %}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Admissions </a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Academics </a></li>
+	        	<li class="nav-item"><a href="{% url 'home:gallery' %}" class="nav-link"> Gallery </a></li>
+	          <li class="nav-item"><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+
+
+      <section class="probootstrap-section probootstrap-section-sm" style="padding:4em 0">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row probootstrap-gutter0">
+                <div class="col-md-8  probootstrap-animate" id="probootstrap-content">
+                  <h2 style="margin: 0;" > News Form -Add News </h2>
+                  Post news in the Featured News Section on Homepage using the form below.
+                  <form action="#" method="post" class="probootstrap-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name"> Title </label>
+                       <input type="text" class="form-control" id="name" name="title" >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="description"> Description (only 2 lines) </label>
+                      <textarea name="description" rows="4" tabindex="10" class="required form-control" ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="subject"> Upload Image </label>
+                      <input type="file" class="required form-control" name="news_image">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="subject"> Upload File(optional) </label>
+                      <input type="file" class="form-control" name="news_file">
+                    </div>
+
+
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="Post News">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

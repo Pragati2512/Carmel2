@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <title> Mt. Carmel | Gallery  </title>
+{% endblock %}
+
+{% block body %}
+
+<style>
+p    {font-size: larger;}
+</style>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="{% url 'home:index' %}"> Kiddos </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <!-- <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p> -->
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="{% url 'home:index' %}" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="{% url 'home:about' %}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Admissions </a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link"> Academics </a></li>
+	        	<li class="nav-item active"><a href="{% url 'home:gallery' %}" class="nav-link"> Gallery </a></li>
+	          <li class="nav-item"><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+
+
+<section class="probootstrap-section" style="padding:4em 0;">
+        <div class="container">
+            <h2> All Images - List </h2>
+            <h3> Sections List </h3>
+  <p> If you Delete a Section, all the images present under the section would also be deleted.
+  </p>
+
+<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th> Sr. No. </th>
+						      <th> Name   </th>
+						      <th> &nbsp;  </th>
+						      <th> &nbsp;  </th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    {% for item in sections %}
+						    <tr class="alert" role="alert">
+						        <td> {{ forloop.counter }} </td>
+						      <td> 	<div class="email">
+						      		     {{ item.name }} <br>
+						      		     {{ item.category }}
+						      	    </div>
+						      </td>
+						      <td> <img src="{{ item.image.url }}" height="90px" > </img> </td>
+						      <td>
+				            	<a href="{% url 'home:sect-del'  item.pk %}">
+				            	  Delete  <i class="icon icon-trash"></i>
+				          	    <a>
+				        	  </td>
+						    </tr>
+                            {% endfor %}
+						  </tbody>
+						</table>
+
+	  <h3> Images List </h3>
+        <p>   You may delete the images that no longer have to be present on the Website.   </p>
+              <table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th> Sr. No. </th>
+						      <th> Name   </th>
+						      <th> &nbsp;  </th>
+						      <th> &nbsp;  </th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    {% for item in items %}
+						    <tr class="alert" role="alert">
+						        <td> {{ forloop.counter }} </td>
+						      <td> 	<div class="email">
+						      		     {{ item.name }} <br>
+						      		     {{ item.category }}
+						      	    </div>
+						      </td>
+						      <td> <img src="{{ item.image.url }}" height="90px" > </img>  </td>
+						      <td>	<a href="{% url 'home:img-del'  item.pk %}"> Delete <a> </td>
+						    </tr>
+                            {% endfor %}
+						  </tbody>
+						</table>
+   </div>
+</section>
+
+
+{% endblock %}
+
